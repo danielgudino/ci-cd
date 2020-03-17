@@ -1,8 +1,8 @@
 version: "3"
 
 services:
-  ci-cd:
-    container_name: ci_ci-cd
+  cicd:
+    container_name: ci_cicd
     image: danielgudino/ci-cd
     restart: always
     expose:
