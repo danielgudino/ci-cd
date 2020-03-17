@@ -1,6 +1,6 @@
 version: "3"
 
 services:
-  ci-cd:
+  ci-cd-docker:
     container_name: ci_ci-cd
-    image: danielgudino/ci-cd:latest
+    image: danielgudino/ci-cd:90ea8600da92caf922a3ef7889d0da94fbb8d230
