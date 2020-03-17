@@ -1,0 +1,13 @@
+version: 2.1
+jobs:
+  build:
+    machine: true
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "79:a3:0d:3e:39:ef:5d:a3:3e:8b:36:f1:f7:ac:07:a5"
+      - checkout
+      - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - run: docker build -t danielgudino/ci-cd:$CIRCLE_SHA1 .
+      - run: docker push danielgudino/ci-cd:$CIRCLE_SHA1
+      - run: ssh -o StrictHostKeyChecking=no administrador@sshserverremote.duckdns.org -p 8822 "sudo /bin/bash /var/www/html/ci-cd/deploy.sh $CIRCLE_SHA1"
