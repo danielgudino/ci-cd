@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  ci-cd:
+    container_name: ci_ci-cd
+    image: danielgudino/ci-cd
+    restart: always
+    expose:
+      - "80"
+      - "443"
+    #volumes:
+    #- .:/usr/share/nginx/html:ro
+    environment:
+      - VIRTUAL_HOST=pedidoswebdev.duckdns.org
+      #- LETSENCRYPT_HOST=pedidoswebdev.duckdns.org
+      #- LETSENCRYPT_EMAIL=admin@duckdns.org
+    networks:
+      - externalnet
+
+networks:
+  externalnet:
+    external: true
