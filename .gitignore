@@ -1,2 +1,3 @@
-deploy.sh
-docker-compose.override.yml
+# Docker files
+/deploy.sh
+/docker-compose.override.yml
