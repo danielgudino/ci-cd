@@ -1,0 +1,5 @@
+version: "3"
+
+services:
+  cicd:
+    image: danielgudino/ci-cd:dec24572ff3948db10df15c81f776ba0d18ea3f5
