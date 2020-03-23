@@ -10,4 +10,4 @@ jobs:
       - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
       - run: docker build -t danielgudino/ci-cd:$CIRCLE_SHA1 .
       - run: docker push danielgudino/ci-cd:$CIRCLE_SHA1
-      - run: ssh -o StrictHostKeyChecking=no administrador@sshserverremote.duckdns.org -p 8822 "sudo /bin/bash /var/www/html/ci-cd/deploy.sh $CIRCLE_SHA1"
+      - run: ssh -o StrictHostKeyChecking=no administrador@sshserverremote.duckdns.org -p 8822 "/bin/bash /var/www/html/ci-cd/deploy.sh $CIRCLE_SHA1"

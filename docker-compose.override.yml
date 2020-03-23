@@ -2,4 +2,4 @@ version: "3"
 
 services:
   cicd:
-    image: danielgudino/ci-cd:0149de220334e42a1d05a0530cc93848268906f8
+    image: danielgudino/ci-cd:
